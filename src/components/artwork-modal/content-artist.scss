@@ -1,0 +1,44 @@
+.artist_imgs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(400px, 1fr));
+  > div {
+    img {
+      object-fit: contain;
+      width: 85%;
+      height: 85%;
+    }
+  }
+}
+
+.artist_video {
+  width: 90%;
+  max-width: 1200px;
+  max-height: 900px;
+  height: auto;
+  object-fit: cover;
+}
+
+// / 태블릿, 아이패드 /
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+
+// / 아이패드 프로 /
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+}
+
+// / 스마트폰 모바일(세로) /
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 479px) {
+  .artist_video {
+    margin-top: 1rem;
+    height: 70vh;
+  }
+}
+// / 아이폰 SE /
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+  .artist_video {
+    margin-top: 1rem;
+    height: 70vh;
+  }
+}

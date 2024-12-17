@@ -1,0 +1,467 @@
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button,
+  textarea,
+  input {
+    font-family: var(--font-NotoSans-Bold);
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  > section {
+    width: 50%;
+
+    &:nth-child(1) {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+.contact_Us {
+  margin: 3rem 5rem;
+  margin-bottom: 0;
+  height: 80vh;
+  min-height: 600px;
+  background-color: rgb(98, 98, 98);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  padding-bottom: 3rem;
+  h1 {
+    font-size: 5rem;
+  }
+
+  input,
+  textarea {
+    padding: 0.5rem;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border-bottom: 0.2rem solid gray;
+    width: 100%;
+    margin: 1rem 0;
+    resize: none;
+  }
+
+  input:focus,
+  textarea:focus {
+    animation-duration: 2s;
+    border-bottom: 0.2rem solid white;
+    outline: none;
+  }
+
+  button {
+    width: 12rem;
+    font-size: 2.2rem;
+    padding: 1.2rem;
+    border-bottom: 0.1rem solid white;
+    p {
+      font-size: 2.1rem;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+// 인풋 선택시 사용자 에이전트 스타일로 인한 css변환 막기
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  -webkit-text-fill-color: white;
+  box-shadow: 0 0 0px 1000px rgb(98, 98, 98) inset;
+  transition: background-color 5000s ease-in-out 0s;
+  font-size: 2rem;
+}
+-internal-input-suggested {
+  font-size: 2rem;
+}
+input:autofill,
+input:autofill:hover,
+input:autofill:focus,
+input:autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  -webkit-text-fill-color: white;
+  box-shadow: 0 0 0px 1000px rgb(98, 98, 98) inset;
+  transition: background-color 5000s ease-in-out 0s;
+  font-size: 2rem;
+}
+
+.submit_message {
+  position: absolute;
+  font-size: 4rem;
+  margin-top: 2rem;
+  text-align: center;
+  perspective: 400px;
+  width: auto;
+  bottom: 2rem;
+}
+
+.sandMail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  div {
+    width: 70%;
+  }
+}
+
+.contact_link {
+  width: 50%;
+  padding: 2rem;
+  padding-bottom: 2px;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  > div {
+    padding: 2rem 0rem;
+    text-align: center;
+  }
+  a,
+  svg {
+    color: var(--cl-main-font);
+    display: block;
+  }
+  a,
+  p {
+    padding: 0.2rem;
+    font-size: 1.8rem;
+  }
+  .mailIcon:hover,
+  .icon:hover {
+    border-bottom: 0;
+    svg{
+      color: gray;
+    }
+  }
+}
+
+.contact_Us {
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--cl-main-font);
+  }
+}
+
+.contact_link a:hover {
+  border-bottom: 0.1rem solid white;
+}
+
+.links {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 300;
+    margin: 1rem;
+  }
+}
+
+
+.contact_link > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 300;
+  margin: 1rem;
+}
+
+.links div b {
+  padding: 0.4rem;
+}
+
+@media screen and (max-width: 1440px) {
+  .contact {
+    h1 {
+      font-size: 4rem;
+    }
+
+    > section:nth-child(1) {
+      width: 50%;
+      justify-content: center;
+
+      > div {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .contact_Us {
+    min-width: 500px;
+
+    input,
+    textarea {
+      font-size: 1.5rem;
+    }
+
+    button {
+      font-size: 1.8rem;
+    }
+  }
+
+  .contact_link {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .contact {
+    h1 {
+      font-size: 3rem;
+    }
+
+    > section:nth-child(1) {
+      width: 50%;
+      justify-content: center;
+
+      > div {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .contact_Us {
+    min-width: 500px;
+
+    input,
+    textarea {
+      font-size: 1.2rem;
+    }
+
+    button {
+      font-size: 1.3rem;
+    }
+  }
+
+  .contact_link {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .contact {
+    h1 {
+      font-size: 2.4rem;
+    }
+
+    > section:nth-child(1) {
+      width: 50%;
+      justify-content: center;
+
+      > div {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .contact_Us {
+    min-width: 300px;
+    max-height: 600px;
+    margin: 5rem 4rem;
+
+    input,
+    textarea {
+      font-size: 1.2rem;
+      margin: 2rem;
+    }
+
+    button {
+      font-size: 1.3rem;
+      width: 10rem;
+    }
+  }
+
+  .contact_link {
+    font-size: 1rem;
+  }
+
+  .links {
+    flex-wrap: wrap;
+    max-width: 430px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    flex-direction: column;
+
+    > section {
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 3.4rem;
+    }
+
+    > section:nth-child(1) {
+      width: 100%;
+      justify-content: center;
+      > div {
+        margin-right: 5rem;
+      }
+    }
+    .contact_link a,
+    .contact_link p {
+      font-size: 1.2rem;
+    }
+    .contact_link {
+      width: 80%;
+      > div {
+        padding: 0px;
+      }
+    }
+  }
+  .submit_message {
+    font-size: 2rem;
+    bottom: 2rem;
+  }
+
+  .contact_Us {
+    min-width: 300px;
+    max-height: 1000px;
+    margin: 5rem;
+
+    input,
+    textarea {
+      min-width: 200px;
+      font-size: 2rem;
+      margin: 1.5rem;
+    }
+
+    button {
+      font-size: 2.4rem;
+      width: 17rem;
+    }
+  }
+
+  .links {
+    max-width: 80%;
+  }
+  .mailIcon {
+    font-size: 0.8rem;
+  }
+}
+
+// / 태블릿, 아이패드 /
+@media only screen and (min-device-width: 769px) and (max-device-width: 1024px) {
+  .contact {
+    > section:nth-child(1) {
+      width: 65%;
+    }
+    > section:nth-child(2) {
+      width: 35%;
+    }
+  }
+  .contact_Us {
+    max-height: none;
+    h1 {
+      font-size: 5rem;
+    }
+    input,
+    textarea {
+      font-size: 2.3rem;
+    }
+    button {
+      font-size: 2.7rem;
+      width: 16rem;
+    }
+  }
+  .contact_link {
+    width: 30%;
+    > div {
+      padding: 0px;
+    }
+    .links {
+      flex-direction: column;
+    }
+  }
+}
+
+// / 아이패드 프로 /
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+  .contact {
+    > section:nth-child(1) {
+      width: 70%;
+    }
+    > section:nth-child(2) {
+      width: 30%;
+    }
+  }
+  .contact_Us {
+    h1 {
+      font-size: 6rem;
+    }
+    input,
+    textarea {
+      font-size: 2.7rem;
+    }
+    button {
+      font-size: 2.7rem;
+      width: 16rem;
+    }
+  }
+  .contact_link {
+    width: 30%;
+    .links {
+      flex-direction: column;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 359px) {
+  .contact_Us {
+    h1 {
+      font-size: 2.8rem;
+    }
+    input,
+    textarea {
+      font-size: 1.3rem;
+    }
+    button {
+      font-size: 2.5rem;
+      width: 200px;
+    }
+  }
+}
+
+// / 스마트폰 모바일(세로) /
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 479px) {
+  .contact_Us {
+    h1 {
+      font-size: 2rem;
+    }
+    input,
+    textarea {
+      font-size: 1.2rem;
+    }
+    button {
+      font-size: 1.4rem;
+      width: 10rem;
+    }
+  }
+}
+
+//  surface duo
+@media screen and (min-device-width: 480px) and (max-device-width: 768px) {
+}

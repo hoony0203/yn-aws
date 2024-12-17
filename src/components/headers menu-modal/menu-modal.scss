@@ -1,0 +1,105 @@
+.modal_dialog {
+  width: 100%;
+  height: 90vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  color: var(--cl-main-font);
+  background-color: transparent;
+  position: fixed;
+  text-align: center;
+  overscroll-behavior: none;
+  transform: translate(0px, 0px);
+  z-index: -1;
+  overflow-y: visible;
+  &::backdrop,
+  & + .backdrop {
+    background: rgba(30, 30, 30, 1);
+  }
+
+  ul {
+    li {
+      a,
+      .archive_menu {
+        text-transform: uppercase;
+        font-size: 4rem;
+        text-decoration: none;
+        cursor: pointer;
+        color: var(--cl-main-font);
+        &:hover {
+          -webkit-text-stroke: 1px var(--cl-main-font);
+          color: transparent;
+        }
+      }
+    }
+  }
+
+  .archive_menu {
+  }
+
+  .archive_sub_ul {
+    .archive_sub_li {
+      margin: 0 auto;
+      width: 15rem;
+      font-size: 3rem;
+      line-height: 1.1px;
+      // background-color: var(--cl-about-bg);
+
+      a {
+        font-size: 1rem;
+      }
+      display: none;
+      height: 0;
+    }
+  }
+
+  .modal_close_Btn {
+    position: absolute;
+    left: 93.3%;
+    bottom: 92%;
+    button {
+      cursor: pointer;
+      font-size: 4rem;
+      &:hover {
+        -webkit-text-stroke: 1px var(--cl-main-font);
+        color: transparent;
+      }
+    }
+  }
+}
+
+// / 스마트폰 모바일(세로) /
+@media only screen and (min-device-width: 375px) and (max-device-width: 479px) {
+  .modal_dialog {
+    width: 100%;
+    padding: 0;
+    transform: translateX(-1px);
+    ul {
+      li {
+        a,
+        .archive_menu {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    .modal_close_Btn {
+      left: 86.5%;
+      bottom: 89%;
+    }
+  }
+}
+
+// / 아이폰 SE /
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 375px) {
+  .modal_dialog {
+    width: 100%;
+    .modal_close_Btn {
+      left: 85%;
+      bottom: 87%;
+    }
+  }
+}

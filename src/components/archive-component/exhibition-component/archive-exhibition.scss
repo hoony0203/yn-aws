@@ -1,0 +1,288 @@
+$band-backcolor: (
+  rgb(0, 0, 0, 0),
+  rgb(132, 77, 5),
+  rgb(225, 101, 0),
+  white,
+  rgb(255, 191, 0),
+  rgb(0, 47, 255),
+  rgb(66, 70, 82),
+  rgb(176, 126, 45),
+  chartreuse,
+  white
+);
+$band-textcolor: (
+  white,
+  white,
+  white,
+  black,
+  rgb(95, 95, 95),
+  white,
+  white,
+  white,
+  black,
+  black
+);
+// 객체 중앙 정렬 입체감 설정
+.exhibition_books {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  perspective: 350px;
+  transform-style: preserve-3d;
+  margin: 2rem;
+  // 각 책들의 사이즈 설정
+  > .book {
+    width: 60%;
+    max-width: 1600px;
+    height: 7rem;
+    margin: 1rem;
+    text-align: center;
+    display: flex;
+    font-size: 3rem;
+    font-weight: 900;
+    align-items: center;
+    justify-content: space-evenly;
+    opacity: 0;
+    // 메인 배너 예외처리
+    &:nth-child(1) {
+      position: relative;
+      width: 70%;
+      height: auto;
+      min-width: 500px;
+      max-width: 1300px;
+      margin-bottom: 5rem;
+      img {
+        width: 60vw;
+        height: 200px;
+        max-width: 1300px;
+        max-height: 300px;
+        object-fit: cover;
+      }
+      p {
+        position: absolute;
+        font-weight: 900;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        white-space: pre-line;
+        text-align: start;
+      }
+    }
+
+    img {
+      object-fit: fill;
+      height: 7rem;
+      width: auto;
+    }
+  }
+}
+.book {
+  p {
+    font-size: 3rem;
+    align-content: center;
+    -webkit-align-content: center;
+  }
+}
+.JGTDubai2024mobile {
+  display: none;
+}
+// 각 객체별 개별 설정값 지정
+@for $i from 1 through length($band-backcolor) {
+  .book:nth-child(#{$i}) {
+    background-color: nth($band-backcolor, $i);
+    color: nth($band-textcolor, $i);
+    // @if ( $i %2 == 1) {
+    //   transform: rotateY(-1.5deg)
+    // } @else {
+    //   transform: rotateY(1.5deg)
+    // }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .exhibition_books {
+    > .book {
+      width: 70%;
+    }
+    p {
+      font-size: 2.8rem;
+    }
+  }
+  // .couture2024 {
+  //   margin-bottom: 4rem;
+  //   p {
+  //     font-size: 3rem;
+  //     width: 110%;
+  //   }
+  // }
+}
+
+@media screen and (max-width: 1280px) {
+  .exhibition_books {
+    > .book {
+      width: 70%;
+      height: 6rem;
+      img {
+        height: 6rem;
+      }
+    }
+    p {
+      font-size: 2.2rem;
+    }
+  }
+  // .couture2024 {
+  //   height: auto;
+  //   margin-bottom: 3rem;
+  //   p {
+  //     font-size: 3rem;
+  //     width: 115%;
+  //   }
+  //   img {
+  //     height: 200px;
+  //   }
+  // }
+}
+@media screen and (max-width: 1080px) {
+  .exhibition_books {
+    > .book {
+      width: 75%;
+      height: 5rem;
+      img {
+        height: 5rem;
+      }
+    }
+    p {
+      font-size: 1.8rem;
+    }
+  }
+  // .couture2024 {
+  //   margin-bottom: 1.8rem;
+  //   height: 150px;
+  //   img {
+  //     height: 150px;
+  //   }
+  //   p {
+  //     font-size: 3rem;
+  //     width: 120%;
+  //   }
+  // }
+}
+// 모바일 화면 레이아웃 변경
+@media screen and (max-width: 768px) {
+  .exhibition_books {
+    margin-top: 1rem;
+    display: grid;
+    justify-items: center;
+    height: auto;
+    overflow: hidden;
+    // text-align: -webkit-center;
+    > .book {
+      position: relative;
+      border-radius: 30px;
+      width: 80%;
+      height: 15vh;
+      overflow: hidden;
+      opacity: 1;
+      display: flex;
+      justify-content: flex-start;
+      background: none;
+      // 예외처리 대상 다시 통일화 시키기
+      &:nth-child(1) {
+        width: 80%;
+        height: 15vh;
+        margin-bottom: 1rem;
+        min-width: 0px;
+        p {
+          justify-content: center;
+          background-color: rgb(192 192 192 / 10%);
+          text-align: center;
+        }
+        img {
+          width: 100%;
+          height: 200px;
+        }
+      }
+      // 이미지 없는 객체 개별 백그라운드 지정
+      &:nth-child(9) {
+        p {
+          background-color: #3f7f00;
+        }
+        > img {
+          display: none;
+        }
+      }
+      // 이미지 투명인 객체 백그라운드 지정
+      &:nth-child(10) {
+        > img {
+          background-color: white;
+          width: 100%;
+        }
+      }
+      img {
+        position: absolute;
+        height: 15vh;
+        object-fit: cover;
+        width: auto;
+      }
+      // 얀간 어두운 그림자 만들기
+      p {
+        z-index: 2;
+        color: white;
+        background-color: rgb(0, 0, 0, 0.5);
+        width: 100%;
+        height: 15vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .couture2024 {
+      p {
+        background-color: rgb(135 110 0 / 49%);
+      }
+    }
+    p {
+      font-size: 3.5rem;
+    }
+  }
+  .JGTDubai2024mobile {
+  display: block;
+  }
+  .JGTDubai2024pc{
+  display: none;
+  }
+}
+
+// / 태블릿, 아이패드 /
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+
+// / 아이패드 프로 /
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 359px) {
+  .exhibition_books {
+    > .book {
+      p {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+// / 스마트폰 모바일(세로) /
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 479px) {
+  .exhibition_books {
+    > .book {
+      p {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}

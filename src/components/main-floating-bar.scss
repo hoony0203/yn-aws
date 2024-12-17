@@ -1,0 +1,28 @@
+.main_floating_bar {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  .link {
+    opacity: 0;
+    width: 4rem;
+    height: auto;
+    right: 5rem;
+    position: absolute;
+    bottom: 1rem;
+    display: none;
+  }
+  a {
+    color: var(--cl-main-font);
+  }
+}
+// 모바일은 중앙으로 이동
+@media screen and (max-width: 768px) {
+  .main_floating_bar {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    .link {
+      right: auto;
+    }
+  }
+}

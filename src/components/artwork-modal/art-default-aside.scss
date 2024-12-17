@@ -1,0 +1,36 @@
+.art_modal_aside {
+  display: flex;
+  flex-direction: column;
+
+  padding: 5rem 2rem 0 2rem;
+  figure {
+    margin-bottom: 5rem;
+  }
+
+  .artist_info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .artsist_address {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.logo {
+  width: auto;
+  height: 100px;
+  object-fit: contain;   
+}
+
+.logo.stree {
+  width: auto;
+  height: 41px;
+}
+
+.campaign_subTitle {
+  margin-bottom: 2rem;
+}

@@ -1,0 +1,179 @@
+.at_item_container {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 5rem;
+  gap: 3rem;
+}
+
+.at_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 2.5rem;
+
+  > {
+    h3 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      letter-spacing: -0.03rem;
+      margin-top: 1rem;
+      max-width: 30rem;
+      color: var(--cl-script-font);
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .at_item_container {
+    > figure {
+      text-align: center;
+      Img {
+        width: 300px;
+        height: 380px;
+      }
+      .at_content {
+        margin-top: 1.2rem;
+        > {
+          p {
+            font-size: 1.3rem;
+            max-width: 20rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .at_item_container {
+    > figure {
+      Img {
+        width: 250px;
+        height: 330px;
+      }
+      .at_content {
+        margin-top: 0.7rem;
+        > {
+          p {
+            letter-spacing: -0.02rem;
+            max-width: 15rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  %item-Img-1080 {
+    width: 650px;
+    height: 300px;
+    object-fit: cover;
+  }
+  .at_item_container {
+    flex-direction: column;
+
+    > figure {
+      img {
+        @extend %item-Img-1080;
+      }
+      .at_content {
+        margin-top: unset;
+        position: relative;
+        bottom: 4.4rem;
+        > {
+          h3 {
+            font-size: 2.5rem;
+          }
+          p {
+            margin-top: 2rem;
+            font-size: 1.8rem;
+            max-width: 32rem;
+          }
+        }
+      }
+    }
+
+    /* 1080 이하에서 flex 배열 순서를 바꿈 */
+    > figure:nth-child(1) {
+      order: 2;
+    }
+    > figure:nth-child(2) {
+      order: 1;
+    }
+    > figure:nth-child(3) {
+      order: 3;
+    }
+  }
+}
+
+// / 태블릿, 아이패드 /
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+}
+
+// / 아이패드 프로 /
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+}
+// / 스마트폰 모바일(세로) /
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 479px) {
+  %item-Img {
+    width: 260px;
+    height: 120px;
+  }
+  .at_item_container {
+    padding: 1rem 0 0 0;
+
+    > figure {
+      img {
+        @extend %item-Img;
+      }
+      .at_content {
+        bottom: 4.4rem;
+        > {
+          h3 {
+            font-size: 2.2rem;
+          }
+          p {
+            font-size: 1.2rem;
+            width: 23rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// / 아이폰 SE /
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 375px) {
+  %item-Img2 {
+    width: 260px;
+    height: 120px;
+  }
+  .at_item_container {
+    padding: 1rem 0 0 0;
+
+    > figure {
+      img {
+        @extend %item-Img2;
+      }
+      .at_content {
+        bottom: 4.4rem;
+        > {
+          h3 {
+            font-size: 2.2rem;
+          }
+          p {
+            font-size: 1.2rem;
+            width: 23rem;
+          }
+        }
+      }
+    }
+  }
+}

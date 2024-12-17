@@ -1,0 +1,374 @@
+.ay_container {
+  padding-top: 5rem;
+  padding-bottom: 15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.ay_title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  > video {
+    width: inherit;
+    height: 15rem;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    z-index: 0;
+    object-position: left center;
+    -webkit-filter: brightness(1.7);
+    -o-filter: brightness(1.7);
+    filter: brightness(1.7);
+  }
+
+  h4 {
+    position: absolute;
+    font-size: 3.2rem;
+    bottom: 50%;
+    color: var(--cl-main-bg);
+    transform: translateY(50%);
+  }
+}
+
+.ay_subtitle p,
+.ay_rep_script p {
+  color: var(--cl-script-font);
+}
+
+.ay_subtitle {
+  text-align: center;
+  padding-bottom: 1.5rem;
+
+  h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: -0.1rem;
+  }
+
+  p {
+    margin: 0 auto;
+    font-size: 1.8rem;
+    letter-spacing: -0.05rem;
+    max-width: 90rem;
+  }
+}
+
+.ay_content {
+  display: grid;
+  grid-template-columns: 1fr 60rem 1fr;
+  justify-content: center;
+  overflow: hidden;
+
+  Img {
+    margin-right: 3.8rem;
+  }
+}
+
+.ay_rep {
+  display: flex;
+  Img {
+    width: 250px;
+    height: 310px;
+  }
+}
+
+.ay_rep_script {
+  position: relative;
+
+  h4 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    max-width: 40rem;
+    font-size: 1.3rem;
+  }
+}
+#left_line_path {
+  grid-column: 1 / 2;
+  opacity: 0;
+}
+#right_line_path {
+  grid-column: 3 / 4;
+  opacity: 0;
+}
+
+#left_line_path,
+#right_line_path {
+  stroke-dasharray: 720;
+}
+
+.right_line {
+  position: relative;
+  top: 25rem;
+}
+
+@media screen and (max-width: 1440px) {
+  .ay_title {
+    > video {
+      height: 11rem;
+    }
+
+    h4 {
+      font-size: 2.5rem;
+    }
+  }
+
+  .ay_subtitle {
+    h3 {
+      font-size: 3.2rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+    }
+  }
+
+  .ay_content {
+    grid-template-columns: 1fr 50rem 1fr;
+
+    // Img {
+    //   margin-right: 3.8rem;
+    // }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .ay_title {
+    > video {
+      height: 9.5rem;
+    }
+    h4 {
+      font-size: 2rem;
+    }
+  }
+
+  .ay_subtitle {
+    h3 {
+      font-size: 2.8rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      letter-spacing: -0.08rem;
+    }
+  }
+
+  .ay_content {
+    grid-template-columns: 1fr 45rem 1fr;
+
+    Img {
+      margin-right: 2.3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .ay_container {
+    padding-top: 3rem;
+  }
+
+  .ay_title {
+    > video {
+      height: 8rem;
+    }
+    h4 {
+      text-align: center;
+      font-size: 1.5rem;
+      max-width: 30rem;
+    }
+  }
+
+  .ay_subtitle {
+    h3 {
+      font-size: 2.2rem;
+    }
+
+    p {
+      font-size: 1.3rem;
+      letter-spacing: -0.08rem;
+      max-width: 35rem;
+    }
+  }
+
+  .ay_content {
+    grid-template-columns: 1fr 35rem 1fr;
+
+    Img {
+      margin-right: 2.3rem;
+    }
+  }
+
+  .ay_rep_script {
+    h4 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// / 태블릿, 아이패드 /
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .ay_rep_script {
+    h4 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+// / 아이패드 프로 /
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+}
+
+// / 스마트폰 모바일(세로) /
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 479px) {
+  .ay_title {
+    &::before {
+      content: "FIND YOUR JEWELRY NO MATTER YOU ARE";
+      font-family: "notoSansBlack", "notoSansBlack Fallback";
+      color: var(--cl-main-bg);
+      position: absolute;
+      bottom: 50%;
+      transform: translateY(50%);
+      font-weight: 700;
+      font-size: 1.9rem;
+      text-align: center;
+      max-width: 21rem;
+      z-index: 1;
+    }
+    > video {
+      position: relative;
+      height: 10rem;
+    }
+
+    h4 {
+      display: none;
+    }
+  }
+
+  .ay_subtitle {
+    h3 {
+      font-size: 2.2rem;
+    }
+
+    p {
+      font-size: 1.35rem;
+      letter-spacing: -0.02rem;
+      max-width: 32rem;
+    }
+  }
+
+  .ay_content {
+    display: flex;
+    overflow: unset;
+    // margin: 0 auto;
+
+    .ay_rep {
+      justify-content: center;
+      Img {
+        margin-right: 1.2rem;
+        width: 170px;
+        height: 350px;
+        object-fit: cover;
+      }
+    }
+
+    .left_line,
+    .right_line {
+      display: none;
+    }
+  }
+
+  .ay_rep_script {
+    bottom: 0.7rem;
+    h4 {
+      font-size: 1.85rem;
+    }
+
+    p {
+      max-width: 13rem;
+      font-size: 1.25rem;
+    }
+  }
+}
+
+// / 아이폰 SE /
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 375px) {
+  .ay_title {
+    &::before {
+      content: "FIND YOUR JEWELRY NO MATTER YOU ARE";
+      position: absolute;
+      bottom: 50%;
+      transform: translateY(50%);
+      font-weight: 700;
+      font-size: 1.9rem;
+      text-align: center;
+      max-width: 22rem;
+    }
+    > video {
+      position: relative;
+      height: 10rem;
+      opacity: 0.4;
+    }
+
+    h4 {
+      display: none;
+    }
+  }
+  .ay_subtitle {
+    h3 {
+      font-size: 2.2rem;
+    }
+
+    p {
+      font-size: 1.3rem;
+      letter-spacing: -0.08rem;
+      max-width: 25rem;
+    }
+  }
+  .ay_content {
+    padding-left: 1rem;
+    display: inline-block;
+    overflow: unset;
+
+    .ay_rep {
+      display: flex;
+
+      Img {
+        margin-right: 1.2rem;
+        width: 150px;
+        height: 300px;
+        object-fit: cover;
+      }
+    }
+    .left_line,
+    .right_line {
+      display: none;
+    }
+  }
+  .ay_rep_script {
+    bottom: 0.7rem;
+    h4 {
+      font-size: 1.7rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      max-width: 11rem;
+      font-size: 1rem;
+    }
+  }
+}

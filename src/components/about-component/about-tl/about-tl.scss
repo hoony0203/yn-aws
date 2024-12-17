@@ -1,0 +1,427 @@
+.atl_container {
+  overscroll-behavior: contain;
+  position: relative;
+}
+
+.atl_contents {
+  display: flex;
+  justify-content: center;
+  .atl_img .atl_year_digit,
+  .atl_img {
+    opacity: 1;
+  }
+}
+.atl_title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 4rem;
+  padding-bottom: 5rem;
+}
+
+.atl_img {
+  width: 900px;
+  height: 80vh;
+  text-align: center;
+  position: relative;
+  padding-left: 3rem;
+  > div {
+    display: flex;
+    position: absolute;
+  }
+  // 연혁 이미지와 그림자 설정
+  .imgLR {
+    display: flex;
+    position: absolute;
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: var(--cl-aboutSwiper);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    &:nth-child(n + 2) {
+      opacity: 0;
+    }
+    img {
+      object-fit: contain;
+      width: 670px;
+      position: relative;
+    }
+    .atl_l {
+      opacity: 0;
+    }
+    .atl_r {
+      position: absolute;
+    }
+  }
+}
+// 연혁 년도 애니메이션 설정
+.atl_year_digit {
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  bottom: 10rem;
+  width: 100%;
+  h2 {
+    line-height: 7.5rem;
+    position: relative;
+    font-size: 8rem;
+    max-width: 50rem;
+    transform: rotateX(90deg);
+    &:nth-child(2) {
+      left: 11rem;
+    }
+  }
+  .year0 {
+    transform: rotateY(0deg);
+  }
+}
+
+.yearF,
+.yearS {
+  text-align: end;
+  height: 6rem;
+  margin: 3rem;
+}
+
+.tl_line_horizon {
+  display: none;
+}
+
+.atl_attends {
+  z-index: 1;
+  width: 700px;
+  display: grid;
+  justify-content: end;
+
+  .atl_attend_item {
+    margin-bottom: 4rem;
+    max-width: 460px;
+    h3 {
+      font-size: 4rem;
+      margin-bottom: 1.2rem;
+    }
+    p {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+// 스크롤 네비게이션 설정
+.scroll {
+  position: absolute;
+  height: 80vh;
+  width: 20px;
+  align-content: center;
+  right: 30px;
+  z-index: 2;
+  div {
+    width: 20px;
+    height: 20px;
+  }
+}
+.slideguide {
+  display: none;
+}
+.nav_item {
+  width: 20px;
+  height: 20px;
+  border-radius: 90px;
+  background-color: var(--cl-archiveSwiper-Inactive);
+  margin: 1rem;
+  &:nth-child(1) {
+    .navs {
+      opacity: 1;
+    }
+  }
+}
+.navs {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 90px;
+  background-color: var(--cl-main-font);
+}
+
+@media screen and (max-width: 1440px) {
+  .atl_img {
+    width: 700px;
+    height: 700px;
+    text-align: center;
+    position: relative;
+
+    > img {
+      object-fit: contain;
+      width: 570px;
+      height: 580px;
+    }
+  }
+
+  .atl_year_digit {
+    position: absolute;
+    right: 0;
+    .yearF,
+    .yearS {
+      margin: 2rem;
+    }
+
+    h2 {
+      line-height: 6rem;
+      position: relative;
+      font-size: 6rem;
+      max-width: 50rem;
+      &:nth-child(2) {
+        left: 5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .atl_img {
+    padding-left: 0.5rem;
+    width: 600px;
+    height: 600px;
+    text-align: center;
+    position: relative;
+
+    > img {
+      object-fit: contain;
+      width: 470px;
+      height: 480px;
+    }
+  }
+
+  .atl_year_digit {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    .yearF,
+    .yearS {
+      margin: 0;
+    }
+
+    h2 {
+      line-height: 4.5rem;
+      position: relative;
+      font-size: 4.5rem;
+      max-width: 50rem;
+      &:nth-child(2) {
+        left: 4rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .atl_img {
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    position: relative;
+
+    .imgLR {
+      img {
+        width: 500px;
+        height: auto;
+      }
+    }
+
+    > img {
+      object-fit: contain;
+      width: 370px;
+      height: 380px;
+    }
+  }
+
+  .atl_year_digit {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    h2 {
+      line-height: 3.5rem;
+      position: relative;
+      font-size: 3.5rem;
+      max-width: 50rem;
+      &:nth-child(2) {
+        left: 3rem;
+      }
+    }
+  }
+
+  .atl_attends {
+    width: 700px;
+
+    .atl_attend_item {
+      margin-bottom: 4rem;
+      width: 360px;
+      h3 {
+        font-size: 3rem;
+        margin-bottom: 1.2rem;
+      }
+      p {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .atl_container {
+    height: auto;
+  }
+
+  .atl_contents {
+    display: flex;
+    justify-content: unset;
+  }
+
+  .atl_img,
+  .atl_year_digit,
+  .scroll {
+    display: none;
+  }
+
+  .slideguide {
+    display: block;
+    font-size: 4rem;
+    position: absolute;
+    right: 5rem;
+    top: 5rem;
+    border-radius: 180px;
+    height: auto;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .tl_line_horizon {
+    display: inline;
+    z-index: 0;
+    position: absolute;
+    top: 40%;
+    width: 100%;
+  }
+
+  .atl_attends {
+    width: 2920px;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: unset;
+    overflow-x: scroll;
+
+    .atl_attend_item {
+      padding-left: 3rem;
+      width: 260px;
+      margin-bottom: 4rem;
+      h3 {
+        width: 240px;
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+      }
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+// / 태블릿, 아이패드 /
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+}
+
+// / 아이패드 프로 /
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+}
+
+// / 스마트폰 모바일(세로) /
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 479px) {
+  .atl_container {
+    height: auto;
+  }
+
+  .atl_contents {
+    display: flex;
+    justify-content: unset;
+  }
+
+  .atl_img,
+  .atl_year_digit {
+    display: none;
+  }
+
+  .tl_line_horizon {
+    display: inline;
+    z-index: 0;
+    position: absolute;
+  }
+
+  .atl_attends {
+    width: 2920px;
+    display: flex;
+    padding-left: unset;
+
+    .atl_attend_item {
+      padding-left: 3rem;
+      width: 260px;
+      margin-bottom: 4rem;
+      h3 {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+      }
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+// / 아이폰 SE /
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 375px) {
+  .atl_container {
+    height: auto;
+  }
+
+  .atl_contents {
+    display: flex;
+    justify-content: unset;
+  }
+
+  .atl_img,
+  .atl_year_digit {
+    display: none;
+  }
+
+  .tl_line_horizon {
+    display: inline;
+    z-index: 0;
+    position: absolute;
+  }
+
+  .atl_attends {
+    width: 2920px;
+    display: flex;
+    padding-left: unset;
+
+    .atl_attend_item {
+      padding-left: 3rem;
+      width: 260px;
+      margin-bottom: 4rem;
+      h3 {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+      }
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}

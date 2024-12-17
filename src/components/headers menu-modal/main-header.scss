@@ -1,0 +1,183 @@
+.header {
+  position: sticky;
+  padding-top: 2rem;
+  top: -2rem;
+  z-index: 2;
+  width: 100%;
+  height: 11vh;
+  min-height: 7rem;
+  font-weight: bold;
+  font-size: 4rem;
+  background-color: var(--cl-main-bg);
+  nav > ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+  }
+
+  nav > ul > li > a {
+    cursor: pointer;
+    z-index: 1;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--cl-main-font);
+    text-decoration: none;
+    &:hover,
+    .active_link {
+      -webkit-text-stroke: 1px var(--cl-main-font);
+      color: transparent;
+    }
+  }
+  .archive_sub {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 4.2rem;
+    background-color: var(--cl-about-bg);
+    text-transform: uppercase;
+    position: absolute;
+    li {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    a {
+      color: var(--cl-main-font);
+      text-decoration: none;
+      &:hover {
+        -webkit-text-stroke: 1px var(--cl-main-font);
+        color: transparent;
+      }
+    }
+  }
+
+  .subActive {
+    display: flex;
+  }
+  .bar_container {
+    z-index: 2;
+    .bar_Btn {
+      display: none;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .header {
+    font-size: 3rem;
+
+    .archive_sub {
+      gap: 1rem;
+      padding: 1.2rem 2rem 2rem 1.8rem;
+
+      a {
+        font-size: 2.5rem;
+      }
+    }
+
+    .archive_sub {
+      padding: 1rem 2rem;
+
+      li {
+        font-size: 1.2rem;
+      }
+      a {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .header {
+    font-size: 2.5em;
+
+    .archive_sub {
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      li {
+        font-size: 1.2rem;
+      }
+      a {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .header {
+    position: sticky;
+    height: 10vh;
+
+    .bar_container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+
+      .bar_Btn {
+        position: relative;
+        right: 2rem;
+        top: 2.5rem;
+        display: inline;
+      }
+    }
+
+    nav {
+      display: none;
+    }
+  }
+}
+
+// / 태블릿, 아이패드 /
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+  .header {
+    > a {
+      cursor: pointer;
+      z-index: 1;
+      text-align: center;
+      text-transform: uppercase;
+      color: var(--cl-main-font);
+      text-decoration: none;
+    }
+  }
+}
+
+// / 아이패드 프로 /
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+}
+
+// / 스마트폰 모바일(세로) /
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 479px) {
+  .header {
+    height: 10vh;
+
+    .bar_container {
+      height: 100%;
+
+      .bar_Btn {
+        right: 1.5rem;
+        top: 2.5rem;
+      }
+    }
+  }
+}
+
+// / 아이폰 SE /
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 375px) {
+  .header {
+    height: 10vh;
+    .bar_container {
+      height: 100%;
+
+      .bar_Btn {
+        right: 1.5rem;
+        top: 2.5rem;
+      }
+    }
+  }
+}

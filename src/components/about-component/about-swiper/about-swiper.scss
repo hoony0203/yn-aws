@@ -1,0 +1,175 @@
+.as_container {
+  padding-block: 10rem;
+  .about_swiper {
+    z-index: 0;
+    width: 90%;
+    height: 78vh;
+    position: relative;
+    margin-bottom: 3rem;
+
+    /* 스와이퍼 페이지네이션(pagination)*/
+    > div:nth-child(2) {
+      position: absolute;
+      left: 40%;
+      span {
+        border-radius: 0;
+        opacity: 1;
+        width: 50px;
+        --swiper-theme-color: var(--cl-aboutSwiper);
+        --swiper-pagination-bullet-inactive-color: var(--cl-main-font);
+      }
+    }
+  }
+
+  .swiper-nav {
+    display: none;
+  }
+
+  .swiperTitle h2 {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 3rem 0;
+  }
+
+  .about_swiperSlide {
+    display: grid;
+    grid-template-columns: 1fr;
+    p {
+      font-size: 4rem;
+      color: var(--cl-main-font);
+      font-weight: 700;
+      position: absolute;
+    }
+  }
+
+  .swiperImg {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    width: 100%;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    .swiperImg_file {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .swiperScript {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    position: relative;
+    align-self: flex-start;
+    width: 90%;
+  }
+  .about_swiperSlide span {
+    text-align: left;
+    font-size: 1.5rem;
+    color: var(--cl-main-font);
+    display: block;
+    letter-spacing: -0.03rem;
+    max-width: 53.5%;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+}
+
+@media screen and (max-width: 1280px) {
+}
+
+@media screen and (max-width: 1080px) {
+  .as_container {
+    .about_swiper {
+      width: 90%;
+
+      /* 1080 이하에서 pagination 숨김*/
+      > div:nth-child(2) {
+        display: none;
+      }
+    }
+    .swiper-nav {
+      display: block;
+      color: rgba(228, 228, 216, 0.7);
+    }
+
+    .about_swiperSlide {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiperImg {
+      height: 900px;
+
+      p {
+        align-self: baseline;
+        padding-top: 3rem;
+      }
+    }
+    .swiperScript {
+      position: absolute;
+      left: 5%;
+      text-align: center;
+      margin-top: 4rem;
+      > span {
+        text-align: center;
+        letter-spacing: -0.02rem;
+        font-size: 2.2rem;
+        max-width: none;
+      }
+    }
+  }
+}
+
+// / 태블릿, 아이패드 /
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+}
+
+// / 아이패드 프로 /
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+}
+
+// / 스마트폰 모바일(세로) /
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 479px) {
+  .as_container {
+    .about_swiper {
+      width: 80%;
+    }
+    .swiperImg {
+      > p {
+        padding-top: 2rem;
+        font-size: 3rem;
+      }
+    }
+    .swiperScript {
+      > span {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+// / 아이폰 SE /
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 375px) {
+  .as_container {
+    .swiperImg {
+      > p {
+        padding-top: 2rem;
+        font-size: 3rem;
+      }
+    }
+    .swiperScript {
+      > span {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

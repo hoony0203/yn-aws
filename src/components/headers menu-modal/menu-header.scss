@@ -1,0 +1,256 @@
+.menu_header.header_brand {
+  background-color: transparent;
+}
+
+.menu_header {
+  position: sticky;
+  padding-top: 2.8rem;
+  top: -2rem;
+  z-index: 2;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 10vh;
+  font-weight: bold;
+  font-size: 2.5rem;
+  gap: 7rem;
+  background-color: var(--cl-main-bg);
+  min-height: 7rem;
+
+  .menu_titleImg {
+    position: relative;
+    z-index: 1;
+    bottom: 0.2rem;
+  }
+
+  .menu_bar_container {
+    z-index: 2;
+    display: none;
+  }
+  .menu_bar_Btn {
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  a {
+    cursor: pointer;
+  }
+
+  > nav {
+    width: 80%;
+    > ul {
+      display: flex;
+      justify-content: center;
+      gap: 5rem;
+
+      > li:nth-child(1) {
+        padding-top: 0.5rem;
+        min-width: 273px;
+        padding-right: 10rem;
+      }
+      > li:nth-child(4) {
+        position: relative;
+      }
+      > li:nth-child(n + 2) {
+        display: flex;
+        align-items: center;
+        > a {
+          z-index: 1;
+          text-align: center;
+          text-transform: uppercase;
+          color: var(--cl-main-font);
+          text-decoration: none;
+
+          &:hover {
+            -webkit-text-stroke: 1px var(--cl-main-font);
+            color: transparent;
+          }
+        }
+        .active_link {
+          -webkit-text-stroke: 1px var(--cl-main-font);
+          color: transparent;
+        }
+      }
+    }
+  }
+
+  .archive_sub {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: var(--cl-about-bg);
+    text-transform: uppercase;
+    position: absolute;
+    top: 3.5rem;
+
+    li {
+      text-align: center;
+      font-size: 1.6rem;
+      min-width: unset;
+      padding-right: unset;
+    }
+
+    a {
+      color: var(--cl-main-font);
+      text-decoration: none;
+      &:hover {
+        -webkit-text-stroke: 1px var(--cl-main-font);
+        color: transparent;
+      }
+    }
+  }
+
+  .subActive {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .menu_header {
+    font-size: 2.3rem;
+    > nav {
+      > ul {
+        > li:nth-child(1) {
+          padding-right: 5rem;
+        }
+      }
+    }
+
+    .archive_sub {
+      padding: 1rem 0.7rem;
+      li {
+        font-size: 1.5rem;
+      }
+      a {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .menu_header {
+    font-size: 2rem;
+    > nav {
+      > ul {
+        display: flex;
+        gap: 3rem;
+        > li:nth-child(1) {
+          padding-right: 5rem;
+        }
+
+        > li:nth-child(n + 2) {
+          > a {
+            position: relative;
+            top: 0.3rem;
+          }
+        }
+      }
+    }
+
+    .archive_sub {
+      gap: 0.5rem;
+      padding: 0.8rem 0.6rem;
+      li {
+        font-size: 1.3rem;
+      }
+      a {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .menu_header {
+    position: sticky;
+    height: 10vh;
+    padding-top: unset;
+    font-size: 1.6rem;
+    justify-content: space-between;
+    overflow-x: hidden; //파이어폭스 대응
+
+    .menu_bar_container {
+      display: flex;
+      position: relative;
+      top: 1.1rem;
+      right: 1.5rem;
+      order: 2;
+    }
+
+    nav {
+      position: relative;
+      left: 3.5rem;
+      top: 1rem;
+      order: 1;
+      > ul {
+        > li:nth-child(n + 2) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// / 태블릿, 아이패드 /
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+
+// / 아이패드 프로 /
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+}
+
+// / 스마트폰 모바일(세로) /
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 479px) {
+  .menu_header {
+    nav {
+      position: relative;
+      left: 1.5rem;
+      top: 1rem;
+      order: 1;
+      > ul > li:nth-child(n + 2) {
+        display: none;
+      }
+    }
+
+    .menu_bar_container {
+      top: 0.9rem;
+      right: 3rem;
+    }
+  }
+}
+
+// / 아이폰 SE /
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 375px) {
+  .menu_header {
+    position: sticky;
+    height: 10vh;
+    padding-top: unset;
+    font-size: 1.6rem;
+    justify-content: flex-end;
+
+    .menu_bar_container {
+      display: flex;
+      position: relative;
+      top: 0.8rem;
+      right: 1.5rem;
+      order: 2;
+    }
+    .menu_titleImg {
+      bottom: 0.5rem;
+    }
+    nav {
+      position: relative;
+      left: 5rem;
+      top: 1rem;
+      order: 1;
+      > ul > li:nth-child(n + 2) {
+        display: none;
+      }
+    }
+  }
+}

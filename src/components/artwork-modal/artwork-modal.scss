@@ -1,0 +1,787 @@
+.art_modal_dialog {
+  height: 100%;
+  width: 90vw;
+  max-width: 1475px;
+  height: 95%;
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overscroll-behavior: none;
+  transform: translate(0px, 0px);
+  z-index: -1;
+  overflow-y: visible;
+
+  &::backdrop,
+  & + .backdrop {
+    background: rgba(30, 30, 30, 0.7);
+  }
+
+  .art_swiper {
+    height: 100%;
+
+    > div:nth-child(2) {
+      position: absolute;
+      bottom: 3rem;
+      span {
+        border-radius: 0;
+        opacity: 1;
+        width: 50px;
+        margin-right: 1rem;
+        --swiper-theme-color: var(--cl-main-bg);
+        --swiper-pagination-bullet-inactive-color: var(
+          --cl-archiveSwiper-Inactive
+        );
+      }
+    }
+  }
+}
+
+.art_modal_container {
+  width: 90vw;
+  max-width: 1475px;
+  height: 100%;
+  padding: 0;
+  border-radius: 20px;
+  background-color: var(--cl-art-modal);
+  z-index: 2;
+
+  .art_modal_grid.no_aside {
+    grid-template-columns: 1fr;
+  }
+
+  .art_modal_grid.no_footer {
+    grid-template-rows: 5rem 50rem;
+  }
+
+  .art_modal_grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 26rem 1fr;
+    grid-template-rows: 5rem 50rem 3rem;
+    padding: 2rem 5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .art_modal_grid.artistType.second_Page {
+    overflow-y: scroll;
+  }
+
+  .art_modal_grid.artistType {
+    .art_modal_aside {
+      .artist_info {
+        h2 {
+          font-size: 2.8rem;
+        }
+        p {
+          font-size: 1.1rem;
+        }
+      }
+      .artsist_address {
+        p {
+          font-size: 1.1rem;
+          display: flex;
+          flex-direction: column;
+        }
+        a {
+          cursor: pointer;
+          color: cadetblue;
+        }
+      }
+    }
+
+    .art_modal_article {
+      .article_content.vertical_half {
+        .artwork_script {
+          p {
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .art_closeBtn {
+    cursor: pointer;
+  }
+
+  .art_modal_header {
+    display: flex;
+    align-items: center;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    h2 {
+      font-size: 2.8rem;
+      position: relative;
+      left: 27rem;
+    }
+    span {
+      font-size: 2.25rem;
+    }
+    .art_modal_close_Btn {
+      position: absolute;
+      right: 5rem;
+      z-index: 1;
+    }
+  }
+
+  .art_modal_aside {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .art_modal_article.no_aside {
+    grid-column: 1 / 3;
+  }
+  .art_modal_grid.campType {
+    .art_modal_header {
+      h2 {
+        font-size: 2.8rem;
+      }
+    }
+    .art_modal_aside {
+      .campaign_subTitle {
+        h2 {
+          font-size: 2.8rem;
+        }
+      }
+      .artsist_address p {
+        font-size: 1.25rem;
+      }
+    }
+
+    .art_modal_article {
+      .article_header {
+        h4 {
+          font-size: 1.25rem;
+        }
+      }
+      .article_content {
+        .camp_artwork_img {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+          grid-template-rows: repeat(auto-fill, minmax(400px, 1fr));
+          img {
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+  .art_modal_article {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8rem 1fr;
+
+    .article_header {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      position: relative;
+      margin-bottom: 1rem;
+      h4 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin-left: 1rem;
+      }
+    }
+    .article_content {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      // text-align: center;
+    }
+    .article_content.vertical_half {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      grid-template-rows: 1fr;
+      gap: 3rem;
+      padding: 3rem;
+      .artist_artwork_img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        img{
+          object-fit: contain;
+        }
+      }
+      .artwork_script {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+    }
+  }
+
+  .art_modal_footer {
+    display: flex;
+    position: relative;
+    top: 0;
+    justify-content: center;
+
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+
+    .slide_nav {
+      > ul {
+        display: flex;
+        align-content: center;
+        flex-wrap: unset;
+        gap: 1rem;
+        li {
+          width: 50px;
+          height: 10px;
+          background-color: var(--cl-archiveSwiper-Inactive);
+        }
+
+        .nav_active {
+          background-color: var(--cl-main-bg);
+        }
+      }
+    }
+  }
+
+  .article_content.video {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    padding-bottom: 10rem;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .art_modal_container {
+    .art_modal_grid.campType {
+      .art_modal_article {
+        .article_content {
+          .camp_artwork_img {
+            grid-template-columns: repeat(2, minmax(400px, 1fr));
+            grid-template-rows: repeat(auto-fill, minmax(400px, 1fr));
+            img {
+              object-fit: contain;
+            }
+          }
+        }
+      }
+    }
+
+    .art_modal_article {
+      .article_content.vertical_half {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 500px;
+        gap: 1rem;
+        padding: 1rem;
+        .artist_artwork_img {
+          display: flex;
+          justify-content: center;
+          object-fit: contain;
+        }
+        .artwork_script {
+          grid-column: 2 / 3;
+          grid-row: 1 / 2;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .art_modal_container {
+    .art_modal_article {
+      .article_content.vertical_half {
+        grid-template-columns: 1fr;
+        grid-template-rows: 600px 3rem;
+        gap: 1rem;
+        padding: 1rem;
+        .artist_artwork_img {
+          display: flex;
+          justify-content: center;
+          object-fit: contain;
+
+          grid-row: 1 / 2;
+        }
+        .artwork_script {
+          grid-column: 1 / 2;
+          grid-row: 2 / 3;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .art_modal_container {
+    .art_modal_grid.campType {
+      grid-template-columns: 1fr;
+      .art_modal_header {
+        justify-content: center;
+        h2 {
+          left: unset;
+        }
+      }
+
+      .art_modal_aside {
+        display: none;
+        grid-column: unset;
+        grid-row: unset;
+      }
+
+      .art_modal_article {
+        grid-template-rows: 1fr;
+        grid-column: 1 / 2;
+        .article_header {
+          display: none;
+          grid-column: unset;
+          grid-row: unset;
+        }
+        .article_content {
+          grid-column: 1 / 2;
+          display: flex;
+          justify-content: center;
+          grid-row: 1 / 2;
+        }
+        .article_content.video {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    } // campaignType end
+
+    .art_modal_grid.artistType.second_Page {
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      grid-template-rows: 5rem 86rem 3rem;
+      .art_modal_article {
+        .article_content {
+          grid-row: 1 / 2;
+        }
+      }
+    }
+
+    .art_modal_grid.artistType {
+      grid-template-columns: 1fr;
+      grid-template-rows: 2rem 77rem;
+      place-items: center;
+
+      .art_modal_aside.no_aside {
+        display: none;
+      }
+      .art_modal_aside {
+        display: none;
+        width: 100%;
+        grid-row: unset;
+        figure {
+          display: none;
+          margin-bottom: unset;
+        }
+
+        .artist_info {
+          display: inline-flex;
+          flex-direction: row;
+          padding-top: 0.5rem;
+          width: 100%;
+        }
+        .artsist_address {
+          display: none;
+          width: 100%;
+          // display: flex;
+        }
+      }
+
+      .art_modal_header {
+        grid-column: 1 / 2;
+
+        h2 {
+          display: none;
+        }
+      }
+      .art_modal_article {
+        grid-column: 1 / 2;
+
+        grid-template-rows: 1fr;
+        .article_header {
+          display: none;
+          grid-column: unset;
+          grid-row: unset;
+        }
+        .article_content.vertical_half {
+          text-align: unset;
+          display: unset;
+          grid-row: 2 / 3;
+          .artist_artwork_img {
+            width: 100%;
+            margin: 0 auto;
+          }
+        }
+        .artwork_script {
+          // display: none;
+          p {
+            width: 43rem;
+          }
+          .artist_short_info {
+            margin: 1rem 0;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            gap: 2.5rem;
+            h2 {
+              font-size: 2.2rem;
+            }
+            img {
+              width: 40px;
+              height: 25px;
+            }
+            a {
+              flex-grow: 1;
+              bottom: 0;
+              font-size: 1.2rem;
+
+              color: black;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .art_modal_footer {
+        display: none;
+        grid-column: unset;
+        grid-row: unset;
+      }
+    } /// artistType end
+  }
+}
+
+// / 태블릿, 아이패드 /
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .art_modal_container {
+    .art_modal_grid.campType {
+      grid-template-columns: 1fr;
+      .art_modal_aside {
+        display: none;
+        grid-column: unset;
+        grid-row: unset;
+      }
+      .art_modal_article {
+        grid-column: 1 / 2;
+      }
+    }
+  }
+}
+
+// / 아이패드 프로 /
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+  .art_modal_container {
+    .art_modal_grid.campType {
+      grid-template-rows: 10rem 60rem 3rem;
+      .article_content {
+        display: flex;
+        justify-content: center;
+        .campaign_video {
+          position: relative;
+          top: 3rem;
+        }
+      }
+    }
+    //campaignType end
+  }
+}
+
+// / 스마트폰 모바일(세로) /
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 479px) {
+  .art_modal_dialog {
+    .art_swiper {
+      // height: 100%;
+
+      > div:nth-child(2) {
+        position: absolute;
+        margin: 0 auto;
+        bottom: 1rem;
+        span {
+          width: 35px;
+        }
+      }
+    }
+  }
+
+  .art_modal_container {
+    overflow-y: scroll;
+
+    .art_modal_grid.campType.no_aside {
+      .article_content.video {
+        display: grid;
+        grid-template-columns: 1fr;
+        // grid-template-rows: 40rem repeat(auto-fill, minmax(23rem, 1fr));
+        grid-template-rows: 40rem;
+        justify-items: center;
+
+        video {
+          height: 95%;
+        }
+        .camp_imgs.big_height {
+          height: 32rem;
+        }
+        .camp_imgs {
+          height: 23rem;
+          img {
+            padding: 0 1.5rem;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+
+    .art_modal_grid.campType {
+      padding: unset;
+      grid-template-columns: 1fr;
+      grid-template-rows: 7rem 40rem 3rem;
+      .art_modal_header {
+        h2 {
+          font-size: 2rem;
+          text-align: center;
+          position: relative;
+          top: 1.7rem;
+          display: none;
+          span {
+            font-size: 1.5rem;
+          }
+        }
+        .art_modal_close_Btn {
+          right: 1.3rem;
+          top: 1.3rem;
+        }
+      }
+
+      .art_modal_aside {
+        display: none;
+        grid-column: unset;
+        grid-row: unset;
+      }
+
+      .art_modal_article {
+        grid-column: 1 / 2;
+        .article_content {
+          .camp_artwork_img {
+            // display: grid;
+            display: unset;
+            margin: 0 auto;
+            // max-width: 85%;
+            // grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));
+            // grid-template-rows: repeat(auto-fill, minmax(210px, 1fr));
+            > div {
+              // height: 30rem;
+              // display: flex;
+              // justify-content: center;
+
+              img {
+                height: 25rem;
+              }
+            }
+            .camp_short_info {
+              margin-top: 2rem;
+              padding: 0 3rem;
+              header {
+                display: inline-flex;
+                img {
+                  width: 8rem;
+                  height: 2rem;
+                }
+                h2 {
+                  margin-bottom: 1rem;
+                  font-size: 1.7rem;
+                  letter-spacing: -0.1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .art_modal_grid.artistType.second_Page {
+      grid-template-rows: 5rem 1fr 3rem;
+      .art_modal_article {
+        .artist_imgs {
+          grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+          > div {
+            display: flex;
+            justify-content: center;
+          }
+        }
+        .article_content {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+
+    .art_modal_grid.artistType {
+      padding: unset;
+      grid-template-columns: 1fr;
+      grid-template-rows: 5rem 58rem 18rem;
+
+      .art_modal_header {
+        .art_modal_close_Btn {
+          right: 2rem;
+          top: 2rem;
+        }
+      }
+      .art_modal_article {
+        .article_content.vertical_half {
+          padding: unset;
+
+          .artwork_script {
+            p {
+              font-size: 1.15rem;
+              margin: 0 auto;
+              width: 22rem;
+            }
+            .artist_short_info {
+              margin: 0 auto;
+              padding-block: 1rem;
+              width: 21rem;
+              gap: 1rem;
+              h2 {
+                font-size: 1.5rem;
+                letter-spacing: -0.1rem;
+                // width: 10rem;
+              }
+              .insta_container {
+                display: flex;
+                flex-direction: column;
+              }
+              a {
+                color: darkslateblue;
+                font-size: 1.25rem;
+                flex-grow: unset;
+                &:hover {
+                  -webkit-text-stroke: 1px var(--cl-main-font);
+                  color: transparent;
+                }
+              }
+            }
+          }
+
+          .artist_artwork_img {
+            width: 288px;
+            img {
+              width: 270px;
+              height: 330px;
+            }
+          }
+        }
+      }
+
+      .art_modal_aside {
+        figure {
+          margin-bottom: unset;
+        }
+      }
+    }
+  }
+}
+
+// / 아이폰 SE /
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 375px) {
+  .art_modal_container {
+    .art_modal_grid.campType.no_aside {
+      .article_content.video {
+        display: grid;
+        grid-template-columns: 1fr;
+        // grid-template-rows: 30rem repeat(auto-fill, minmax(22rem, 1fr));
+        grid-template-rows: 30rem;
+        justify-items: center;
+
+        video {
+          height: 90%;
+        }
+        .camp_imgs {
+          height: 22rem;
+          img {
+            padding: 0 1.5rem;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+
+    .art_modal_grid.campType {
+      grid-template-rows: 5rem 40rem 3rem;
+      .art_modal_article {
+        .article_content {
+          .camp_artwork_img {
+            > div {
+              // justify-content: unset;
+              img {
+                height: 20rem;
+              }
+            }
+            .camp_short_info {
+              padding: 0 3rem;
+              p {
+                letter-spacing: -0.05rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    .art_modal_grid.artistType.no_footer {
+      grid-template-rows: 5rem 38rem;
+    }
+    .art_modal_grid.artistType {
+      grid-template-rows: 3rem 40rem 18rem;
+
+      .art_modal_header {
+        .art_modal_close_Btn {
+          top: 1rem;
+          right: 1rem;
+          .art_closeBtn {
+            width: 26px;
+            height: 26px;
+          }
+        }
+      }
+
+      .art_modal_article {
+        .article_content.vertical_half {
+          .artwork_script {
+            p {
+              width: 21rem;
+            }
+            .artist_short_info {
+              margin: 0 auto;
+              padding-block: 1rem;
+              // width: 21rem;
+              gap: 1rem;
+              h2 {
+                font-size: 1.25rem;
+              }
+              .insta_container {
+              }
+              a {
+                font-size: 1.2rem;
+              }
+            }
+          }
+
+          .artist_artwork_img {
+            img {
+              object-fit: contain;
+              width: 70%;
+              height: 70%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

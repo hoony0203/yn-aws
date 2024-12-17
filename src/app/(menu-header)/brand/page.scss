@@ -1,0 +1,319 @@
+// 한 화면 안에 콘텐츠 좌우 나누어 정렬
+.brand {
+  top: 0;
+  width: 100%;
+  height: 100dvh;
+  min-height: 600px;
+  display: flex;
+  margin: 0 auto;
+  flex-grow: 1;
+  position: fixed;
+}
+// 콘텐츠 내부 객체 위치 중앙 정렬
+.brand_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  overflow: hidden;
+  justify-content: flex-end;
+  top: 0;
+}
+// 이미지를 백그라운드 이미지화
+.brand_img {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  // 백그라운드 이미지 사이즈 조절 & 기준점 설정
+  > img {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    min-height: 500px;
+    object-fit: cover;
+    object-position: 50% 80%;
+  }
+  // 증앙 로고 이미지 사이즈, 위치 조절
+  > div {
+    position: absolute;
+    width: 700px;
+    align-content: center;
+    .stree{
+      width: 55%;
+    }
+    img {
+      width: 80%;
+      height: auto;
+      margin: 4rem;
+    }
+  }
+}
+
+// 링크 버튼 위치와 사이즈 조절
+.brand_link {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  font-size: 3rem;
+  padding-bottom: 1rem;
+  height: 20%;
+  z-index: 2;
+  position: absolute;
+  bottom: 0.5rem;
+
+  > nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    max-height: 400px;
+  }
+  .linkIcon {
+    height: 30px;
+  }
+  a {
+    padding: 1rem;
+    margin: 0 2rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    &:hover{
+      -webkit-text-stroke: 1px var(--cl-main-font);
+      color: transparent;
+      svg{
+        color: white;
+      }
+    }
+  }
+
+}
+
+// 미디어 쿼리를 이용한 전체적인 사이즈 조절
+@media screen and (max-width: 1440px) {
+  .brand {
+    min-height: 550px;
+  }
+
+  .brand_img > {
+    img {
+      min-height: 400px;
+    }
+    div {
+      width: 600px;
+      a {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .brand_link {
+    font-size: 2.3rem;
+    min-width: 500px;
+    padding-bottom: 0.5rem;
+
+    nav {
+      padding-top: 0.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .brand {
+    min-height: 500px;
+  }
+
+  .brand_img > {
+    img {
+      min-height: 350px;
+    }
+    div {
+      width: 500px;
+      p {
+        font-size: 3.5rem;
+      }
+    }
+  }
+
+  .brand_link {
+    min-width: 400px;
+    padding-bottom: 0.3rem;
+    a {
+      font-size: 3rem;
+    }
+
+    nav {
+      padding-top: 0.3rem;
+    }
+  }
+}
+
+// 이 구간부터 레이아웃 변환 가로 > 세로
+@media screen and (max-width: 1080px) {
+  .brand {
+    min-height: 400px;
+    flex-direction: column;
+  }
+
+  .brand_container {
+    width: 100%;
+    height: 100%;
+    > div {
+      font-size: 2.1rem;
+    }
+  }
+  .brand_img {
+    p {
+      font-size: 2.1rem;
+      padding: 1rem;
+    }
+    img {
+      width: 100%;
+    }
+
+    > div {
+      padding-top: 6.5rem;
+      width: 500px;
+      height: 250px;
+      img {
+        margin: 3rem 0;
+        margin-top: 0;
+      }
+    }
+  }
+// 링크의 위치를 바닥 고정에서 이미지에 맞는 위치로 띄워서 이동
+  .brand_link {
+    img {
+      margin: 0px 3rem;
+      width: 60px;
+      height: 60px;
+    }
+    > nav {
+      top: 35%;
+    }
+    a {
+      padding: 0.3rem;
+      font-size: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .brand {
+    align-content: flex-start;
+  }
+
+  .brand_container {
+    width: 100%;
+  }
+
+  .brand_img {
+    p {
+      font-size: 2.1rem;
+      padding: 1rem;
+    }
+    img {
+      width: 100%;
+    }
+
+    > div {
+      width: 300px;
+      height: 250px;
+    }
+  }
+  .brand_link {
+    font-size: 1rem;
+    min-width: 300px;
+    padding-bottom: 0.5rem;
+    img {
+      margin: 0px 3rem;
+    }
+    > nav {
+      width: auto;
+      top: 35%;
+    }
+    a {
+      padding: 0.3rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+// / 태블릿, 아이패드 /
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .brand_container {
+    .brand_link {
+      img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+}
+
+// / 아이패드 프로 /
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 359px) {
+  .brand_container {
+    > div:nth-child(2) {
+      align-content: center;
+    }
+  }
+  .brand_link {
+    p {
+      font-size: 1.5rem;
+    }
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+// / 스마트폰 모바일(세로) /
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 768px) {
+  .brand_container {
+    > div:nth-child(2) {
+      align-content: center;
+    }
+  }
+  .brand_link {
+    p {
+      font-size: 1.5rem;
+    }
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+// 그 외
+@media screen and (min-device-width: 480px) and (max-device-width: 768px) {
+  .brand_container {
+    margin-bottom: 0;
+    > div:nth-child(2) {
+      align-content: center;
+    }
+  }
+  .brand_link {
+    img {
+      width: 60px;
+      height: 60px;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}

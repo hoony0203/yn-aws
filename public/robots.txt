@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.yeowoon.co.kr/
+
+# Sitemaps
+Sitemap: https://www.yeowoon.co.kr/sitemap.xml

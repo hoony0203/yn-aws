@@ -1,0 +1,17 @@
+.container {
+  background-color: var(--cl-main-bg);
+  min-height: 100dvh;
+  margin: 0 auto;
+}
+
+.main {
+  color: var(--cl-main-font);
+}
+
+body.locked {
+  overflow-y: hidden;
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+  overflow: hidden;
+  overscroll-behavior: none;
+}

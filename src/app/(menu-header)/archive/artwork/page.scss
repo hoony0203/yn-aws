@@ -1,0 +1,216 @@
+.artwork_container {
+  padding-top: 3rem;
+  padding-bottom: 7rem;
+  overflow-x: hidden;
+
+  .artwork_grid {
+    display: grid;
+    grid-template-rows: 25rem 23rem;
+    row-gap: 6rem;
+  }
+  h1 {
+    padding-left: 1.5rem;
+    padding-bottom: 3rem;
+    font-size: 4rem;
+  }
+  Img {
+    cursor: pointer;
+    object-fit: cover;
+  }
+}
+
+.camp.item_container {
+  display: flex;
+  grid-row: 1 / 2;
+  gap: 10rem;
+}
+.artist.item_container {
+  display: flex;
+  grid-row: 2 / 3;
+  gap: 3rem;
+}
+
+.img_item {
+  position: relative;
+  width: 300px;
+  height: 300px;
+
+  > img {
+    width: 100%;
+    height: 100%;
+  }
+  p {
+    transform: translateY(125%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    letter-spacing: -0.1rem;
+    // padding-top: 1rem;
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+}
+@media screen and (max-width: 1280px) {
+}
+@media screen and (max-width: 1080px) {
+  //1080 부터 campaign과 artist를 세로 배열함
+  .artwork_container {
+    h1 {
+      text-align: center;
+      padding-left: unset;
+    }
+    .artwork_grid {
+      display: unset;
+      .camp.item_container {
+        display: grid;
+        grid-template-rows: repeat(2, minmax(400px, 1fr));
+        grid-template-columns: repeat(2, minmax(400px, 1fr));
+        gap: 1rem;
+        place-items: center;
+      }
+      .artist.item_container {
+        display: grid;
+        grid-template-rows: repeat(5, minmax(400px, 1fr));
+        grid-template-columns: repeat(2, minmax(400px, 1fr));
+        gap: 1rem;
+        place-items: center;
+      }
+    }
+  }
+  .img_item {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3.5rem;
+
+    p {
+      font-size: 1.8rem;
+      letter-spacing: -0.1rem;
+      width: 40vw;
+    }
+  }
+}
+
+// / 태블릿, 아이패드 /
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+  .artwork_container {
+    padding-left: unset;
+
+    .artwork_grid {
+      display: unset;
+      .camp.item_container {
+        display: grid;
+        grid-template-rows: repeat(2, minmax(400px, 1fr));
+        grid-template-columns: repeat(2, minmax(400px, 1fr));
+        gap: 1rem;
+      }
+      .artist.item_container {
+        display: grid;
+        grid-template-rows: repeat(5, minmax(400px, 1fr));
+        grid-template-columns: repeat(2, minmax(400px, 1fr));
+        gap: 1rem;
+      }
+    }
+  }
+  .img_item {
+    width: 350px;
+    height: 350px;
+    margin-bottom: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    > img {
+      width: 300px;
+      height: 300px;
+    }
+    p {
+    }
+  }
+}
+
+// / 아이패드 프로 /
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+}
+
+// / 스마트폰 모바일(세로) /
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 479px) {
+  .artwork_container {
+    padding-bottom: 5rem;
+
+    .artwork_grid {
+      display: unset;
+      .camp.item_container {
+        place-items: center;
+        grid-template-rows: repeat(2, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        margin-bottom: 5rem;
+        grid-row-gap: 4rem;
+      }
+      .artist.item_container {
+        place-items: center;
+        grid-template-rows: repeat(5, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        grid-row-gap: 4rem;
+      }
+    }
+  }
+  .img_item {
+    width: 150px;
+    height: 400px;
+    margin-bottom: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    > img {
+      width: 100%;
+      height: 100%;
+    }
+    p {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      font-size: 1.2rem;
+      width: 13rem;
+    }
+  }
+}
+// / 아이폰 SE and S8+ /
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+  .artwork_container {
+    padding-left: unset;
+    padding-bottom: 5rem;
+    .artwork_grid {
+      .camp.item_container {
+        grid-template-rows: repeat(2, 300px);
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        row-gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      .artist.item_container {
+        grid-template-rows: repeat(5, 310px);
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        row-gap: 1rem;
+      }
+    }
+  }
+
+  .img_item {
+    width: 150px;
+    height: 300px;
+
+    > img {
+      width: 100%;
+      height: 100%;
+    }
+    p {
+      font-size: 1.1rem;
+      width: 13rem;
+    }
+  }
+}

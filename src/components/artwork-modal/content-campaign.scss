@@ -1,0 +1,16 @@
+.campaign_video {
+  width: 90%;
+  max-width: 1500px;
+  max-height: 800px;
+  height: auto;
+  object-fit: cover;
+}
+
+// / 아이폰 SE /
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 375px) {
+  .campaign_video {
+    width: 90%;
+    height: 85%;
+  }
+}
